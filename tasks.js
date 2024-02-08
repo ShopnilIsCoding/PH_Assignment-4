@@ -69,3 +69,29 @@ console.log(password({ name: "rahat", birthYear: 2002, siteName: "Facebook" } ))
 console.log(password({ name: "toky", birthYear: 200, siteName: "Facebook" }  ));
 console.log(password({ name: "toky", birthYear: 2000}));
 console.log(password({ name: 34, birthYear: 2000}));
+
+//task-5
+
+function monthlySavings(arr , livingCost)
+{
+    if (!Array.isArray(arr) || typeof livingCost !== 'number')
+        return "invalid input";
+        let total = 0;
+    for(let i=0;i<arr.length;i++)
+    {
+        if(arr[i]>=3000)
+        {
+            arr[i]=arr[i]-((arr[i]*20)/100);
+        }
+         total += arr[i];
+    }
+    if(total-livingCost<0)
+    return "earn more"
+    else
+    return total-livingCost;
+}
+
+console.log(monthlySavings([ 1000 , 2000 , 3000 ] , 5400));
+console.log(monthlySavings([ 1000 , 2000 , 2500 ] , 5000));
+console.log(monthlySavings([ 900 , 2700 , 3400] , 10000));
+console.log(monthlySavings(100, [ 900 , 2700 , 3400]));
