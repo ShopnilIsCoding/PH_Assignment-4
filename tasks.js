@@ -53,7 +53,7 @@ console.log(deleteInvalids([true, 1, false]));
 // task-4
 
 function password(obj) {
-    if (!obj.name || !obj.birthYear || !obj.siteName || typeof obj.birthYear !== 'number' || obj.birthYear < 1000 || obj.birthYear > 9999) {
+    if (typeof obj!=="object" || !obj.name || !obj.birthYear || !obj.siteName || typeof obj.name !== 'string' || typeof obj.siteName !== 'string' || typeof obj.birthYear !== 'number' || obj.birthYear < 1000 || obj.birthYear > 9999) {
         return "invalid";
     }
     const name = obj.name;
@@ -64,7 +64,8 @@ function password(obj) {
     return str;
 }
 
-console.log(password({ name: "kolimuddin", birthYear: 1999, siteName: "google" }))
-console.log(password({ name: "rahat", birthYear: 2002, siteName: "Facebook" } ))
-console.log(password({ name: "toky", birthYear: 200, siteName: "Facebook" }  ))
-console.log(password({ name: "toky", birthYear: 2000}))
+console.log(password({ name: "kolimuddin", birthYear: 1999, siteName: "google" }));
+console.log(password({ name: "rahat", birthYear: 2002, siteName: "Facebook" } ));
+console.log(password({ name: "toky", birthYear: 200, siteName: "Facebook" }  ));
+console.log(password({ name: "toky", birthYear: 2000}));
+console.log(password({ name: 34, birthYear: 2000}));
